@@ -13,14 +13,13 @@
           $result = mysqli_query($con,$sql);
 
           $row = mysqli_fetch_array($result);
-
           if($row){
             if($role == 'moderator'){
-                $Mod_club = $row['club'];
+              $Mod_club = $row['club'];
                
                 setcookie("TestCookie", $Mod_club);
                 setcookie("TestCookie", $Mod_club, time()+3600); 
-                header("location:homepage.php?mod_club=".$Mod_club);
+                header("Location: homepage.php?mod_club=".$Mod_club);
             }
             
           }
@@ -34,7 +33,7 @@
                 if($role == 'admin'){
                   setcookie("TestCookie1", $Username);
                   setcookie("TestCookie1", $Username, time()+3600); 
-                  header("location:admin.php?username_admin=".$Username);
+                  header("Location: admin.php?username_admin=".$Username);
                 }
               }
               else{
@@ -44,8 +43,9 @@
       
                 $row = mysqli_fetch_array($result);
                 if($row){
+                  echo "hello";
                     if($role == 'student'){
-                    header("location:student.php?username=".$Username);
+                header("Location: student.php?username=".$Username);
                     }
                   }
               }
@@ -69,7 +69,7 @@
 	<div class="body-content">
 		<div class="module rounded-2xl my-40" >
 		
-			<form name="fm" name ="myForm" action="#" method="POST">
+			<form name="fm" name ="myForm" action=#" method="POST">
 			<h2 class="text-2xl">VIT ClubConnect</h2>
 			<div class="uniid">
 			<input class="rounded-lg" type="text" name="username" id ="username" placeholder="Username" value="">
